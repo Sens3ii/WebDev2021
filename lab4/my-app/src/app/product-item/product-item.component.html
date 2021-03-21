@@ -1,0 +1,18 @@
+<h3>
+  <a [title]="'Buy on Amazon'" href={{product.link}}
+      target="_blank">
+    {{product.name}}
+  </a>
+</h3>
+
+<p *ngIf="product.description">
+  Description: {{product.description}}
+</p>
+
+<p *ngIf="product.rating">
+  Rating: <span class="fa fa-star checked"></span> {{product.rating}}
+</p>
+
+<div>
+  <img *ngIf="product.image" src="{{product.image}}" [class.img]="product" alt="">
+</div>

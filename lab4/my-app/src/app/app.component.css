@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+}
+
+.row {
+  display: flex;
+  min-height: 100%;
+  height: 100%;
+}
+
+.column {
+  display: flex;
+  flex: 60%;
+  padding: 10px;
+}
+
+.side {
+  flex: 15%;
+}
+
+.content {
+  flex: 85%;
+  white-space: pre-line;
+  display: flex;
+  flex-flow: row;
+  margin-left: auto;
+}
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/

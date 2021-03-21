@@ -1,0 +1,43 @@
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+}
+img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+input {
+  width: 30%;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-box {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-link {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}

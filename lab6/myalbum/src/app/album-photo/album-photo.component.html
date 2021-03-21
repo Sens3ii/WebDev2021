@@ -1,0 +1,12 @@
+<div *ngIf="loaded" class='photos-box'>
+  <div class="back-btn">
+    <button (click)="goBack()">Back</button>
+  </div>
+  <h2>Photos: </h2>
+  <ul *ngIf="photos.length">
+    <li *ngFor="let photo of photos" >
+      {{photo.id}} - {{photo.title}}
+      <img src="{{photo.url}}" alt="">
+    </li>
+  </ul>
+</div>

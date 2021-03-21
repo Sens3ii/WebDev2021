@@ -1,0 +1,16 @@
+<div *ngIf="loaded">
+  <h2>Album Details № {{album.id}}</h2>
+  <label>
+    <input type="text" [(ngModel)]="album.title">
+  </label>
+  <div class="buttons-box">
+    <button (click)="updateAlbum()">Save</button>
+    <button (click)="goBack()">Back</button>
+  </div>
+  <div class="photo-link">
+    <a [routerLink]="['photos']">Show Photos</a>
+  </div>
+</div>
+
+
+

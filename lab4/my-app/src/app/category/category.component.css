@@ -1,0 +1,20 @@
+.fa-share-alt {
+  padding: 3px;
+  color: #fff;
+}
+
+
+.fa-trash {
+  color: white;
+  padding: 3px;
+}
+
+.buttons-container {
+  width: 100%;
+  text-align: center;
+}
+
+.button-box {
+  margin: 0px 5px;
+  display: inline-block;
+}

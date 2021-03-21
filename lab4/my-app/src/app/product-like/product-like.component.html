@@ -1,0 +1,6 @@
+<p *ngIf="cntLikes == 0">
+  <button (click)="onClick()"> Like <span class="fa fa-thumbs-up"></span></button>
+</p>
+<p *ngIf="cntLikes >= 1">
+  <button (click)="onClick()"> Like <span class="fa fa-thumbs-up"></span> {{cntLikes }}</button>
+</p>

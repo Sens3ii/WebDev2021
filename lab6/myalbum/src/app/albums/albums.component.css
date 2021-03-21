@@ -1,0 +1,17 @@
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.link-to-album {
+  font-weight: 500;
+  transition: all 500ms ease;
+}
+.link-to-album:hover {
+  opacity: 0.8;
+  color: rgb(163, 163, 163);
+}
+
+input{
+  width: 300px;
+}

@@ -1,0 +1,51 @@
+<h2 class='category-name'>All products</h2>
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + 'details' " [routerLink]="['/products',product.id]">
+      {{product.name}}
+    </a>
+  </h3>
+  <p *ngIf="product.description">
+    Description: {{product.description}}
+  </p>
+  <p *ngIf="product.rating">
+    Rating: <span class="fa fa-star checked"></span> {{product.rating}}
+  </p>
+  <p *ngIf="product.price">
+    Price: ${{product.price}}
+  </p>
+
+  <p>
+    <img *ngIf="product.image" src="{{product.image}}" [class.img]="product">
+  </p>
+
+  <div class="buttons-box">
+    <div class="button-box">
+      <button (click)="share(product)">
+        Share <i class="fa fa-share-alt"></i>
+      </button>
+    </div>
+    <div class="button-box">
+      <app-product-like>
+        (click) = "onClick()">
+      </app-product-like>
+    </div>
+    <div class="button-box">
+      <app-product-alerts
+        [product]="product"
+        (notify)="onNotify()">
+      </app-product-alerts>
+    </div>
+    <div class="button-box">
+      <button (click)="removeUpload(product)" class="button-box">
+        Delete <i class="fa fa-trash"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

@@ -16,3 +16,4 @@ def product_detail(request, product_id):
     except Product.DoesNotExist as e:
         return JsonResponse({'message': str(e)})
     return JsonResponse(product.to_json())
+

@@ -1,0 +1,31 @@
+<div *ngIf="!loading" style="overflow: hidden;">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="padding: clamp(10px, 30px, 100px);">
+    <div class="col" *ngFor="let product of productList">
+      <div class="card shadow-sm" style="padding: 20px;">
+        <img class="bd-placeholder-img card-img-top" src="{{product.images[0]}}" style="align-self: center;">
+        <div class="card-body">
+          <p class="text-muted" *ngIf="product.name"><a class="link-secondary " [title]="product.name + ' details'"
+                                                        [routerLink]="['/products',product.id]">{{product.name}}</a></p>
+          <p class="text-muted" *ngIf="product.price">Price: {{product.price | currency}}</p>
+          <p class="text-muted" *ngIf="product.rating">Rating: {{product.rating}}</p>
+          <!-- <p class="text-muted" *ngIf="product.categoryId">CID: {{product.categoryId}}</p> -->
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/products/{{product.id}}">
+                View
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addToCart(product)">Add to Cart
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-secondary" (click)="share(product)">Share</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                <app-product-alerts [product]="product" (notify)="onNotify()">
+                </app-product-alerts>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="loading">We are loading products.</div>

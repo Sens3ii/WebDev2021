@@ -1,0 +1,71 @@
+<div *ngIf="!loading">
+  <div class="product-container">
+    <div class="carousel row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
+      <div id="product-album-carousel" class="carousel slide col" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button *ngFor="let image of product.images; let i = index" type="button"
+                  data-bs-target="#product-album-carousel" [attr.data-bs-slide-to]="i"
+                  [ngClass]="{'active': i === activeImageId}" aria-current="true" [attr.aria-label]="i+1"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class='carousel-item {{i == activeImageId ? "active": ""}}'
+               *ngFor="let image of product.images; let i = index">
+            <img src="{{product.images[i]}}" class="d-block img-carousel" alt="{{product}}">
+            <div class="carousel-caption d-none d-md-block">
+              {{i + 1}} image
+              <p>{{product.name}}</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev carousel-dark" type="button" data-bs-target="#product-album-carousel"
+                data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next carousel-dark" type="button" data-bs-target="#product-album-carousel"
+                data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="product-info col">
+        <div class="card-body">
+          <p class="text-bold fs-3" *ngIf="product.name">{{product.name}}</p>
+          <p class="text" *ngIf="product.short_description">Description: {{product.short_description}}</p>
+          <p class="text" *ngIf="product.price"> Price: {{product.price | currency}}</p>
+          <p class="text" *ngIf="product.rating"><span class="fas fa-star"></span> Rating: {{product.rating}}</p>
+
+          <p class="text"><a class="link-secondary" data-bs-toggle="collapse"
+                             href="#collapseExample" role="button" aria-expanded="false"
+                             aria-controls="collapseExample">Show characteristics</a></p>
+          <p class="text collapse" id="collapseExample" *ngIf="product.full_description">
+            Characteristics: {{product.full_description}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addToCart(product)">Add to Cart
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-secondary" (click)="share(product)">Share</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                <app-product-alerts
+                  [product]="product"
+                  (notify)="onNotify()">
+                </app-product-alerts>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-comment-list
+      [productId]="product.id">
+    </app-comment-list>
+    <script>
+      var myCarousel = document.querySelector('#product-album-carousel');
+      var carousel = new bootstrap.Carousel(myCarousel, {interval: 5000});
+    </script>
+  </div>
+  <p class="fs-3 align-middle text-center">
+    <button class="btn btn-outline-success align-middle text-center pt-2" (click)="goBack()">Go back</button>
+  </p>
+</div>
+<p *ngIf="loading">We are loading product.</p>

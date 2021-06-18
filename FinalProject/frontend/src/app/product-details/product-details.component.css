@@ -1,0 +1,13 @@
+
+.product-container {
+    padding: clamp(10px, 40px, 60px);
+}
+
+.img-carousel {
+    width: inherit;
+    /* height: clamp(40vh, 60vh, 80vh); */
+}
+
+.product-info {
+    padding: 10px;
+}

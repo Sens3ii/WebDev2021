@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+button {
+  transition: 0.2s !important;
+}
+
+input:enabled, input:focus, input:checked, input:visited, input:target, input:active, input:default {
+  box-shadow: none !important;
+}
+
+button:enabled, button:focus, button:checked, button:visited, button:target, button:active, button:default {
+  box-shadow: none !important;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}

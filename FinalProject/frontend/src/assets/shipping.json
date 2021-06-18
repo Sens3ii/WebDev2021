@@ -1,0 +1,17 @@
+[
+  {
+    "type": "EasyPost",
+    "price": 10.0,
+    "time": "7 days"
+  },
+  {
+    "type": "KazPost",
+    "price": 30.0,
+    "time": "3-4 days"
+  },
+  {
+    "type": "KazFastPost",
+    "price": 50.0,
+    "time": "1-2 days"
+  }
+]

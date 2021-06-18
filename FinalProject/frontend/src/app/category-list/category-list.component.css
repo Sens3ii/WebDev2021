@@ -1,0 +1,4 @@
+.card-img, .card-img-bottom, .card-img-top {
+    width: clamp(20vw, 25vw, 30vw);
+    height: clamp(14vw, 16vw, 18vw);
+}

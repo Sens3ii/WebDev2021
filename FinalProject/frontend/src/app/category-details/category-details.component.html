@@ -1,0 +1,10 @@
+<div *ngIf="!loading">
+  <p class="fs-3 align-middle text-center pt-2">{{category.name}}</p>
+  <!--    <input  class="text-input" type="text" value="" placeholder="Enter new title." [(ngModel)]="updateTitle">-->
+  <!--    <input type="button" class="confirmation" (click)="updateCategory()" value="Update title">-->
+  <!-- <a style="margin: 5px" routerLink="/category-list/{{category.id}}/product-list" (click)="getProductList()">Products</a> -->
+  <!-- <a style="margin: 5px" routerLink="/category-list/{{category.id}}/product-list" [categoryId]="category.id">Products</a> -->
+  <app-product-list [categoryId]="category.id"></app-product-list>
+  <p class="fs-3 align-middle text-center"><button class="btn btn-outline-success align-middle text-center pt-2" (click)="goBack()">Go back</button></p>
+</div>
+<p *ngIf="loading">We are loading category.</p>

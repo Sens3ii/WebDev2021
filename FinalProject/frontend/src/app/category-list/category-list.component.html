@@ -1,0 +1,15 @@
+<div *ngIf="!loading" style="overflow: hidden;">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="padding: clamp(10px, 50px, 100px);">
+    <div class="col" *ngFor="let category of categoryList">
+      <div class="card shadow-sm" style="padding: 20px;">
+        <img class="bd-placeholder-img card-img-top" src="{{category.image}}" style="align-self: center;">
+        <div class="card-body">
+          <h5 class="card-title">{{category.name}}</h5>
+          <p class="card-text">{{category.description}}</p>
+          <a routerLink="/categories/{{category.id}}" class="btn btn-outline-success">View Products</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="loading">We are loading categories...</div>

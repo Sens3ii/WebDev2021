@@ -1,0 +1,15 @@
+.navbar{
+  font-weight: 500;
+}
+input{
+  border-radius: 0 !important;
+  border-bottom-left-radius: 6px !important;
+  border-top-left-radius: 6px !important;
+}
+
+
+form button{
+  border-radius: 0 !important;
+  border-bottom-right-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+}

@@ -1,0 +1,26 @@
+<h1>Hello {{ title }}</h1>
+<p>{{ message }}</p>
+<p>{{ num * 2 }}</p>
+
+<ul>
+  <li *ngFor="let number of numbers">
+    {{ number }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let student of students; let i = index">
+    {{ i + 1 }}) {{ student.id }} - {{ student.full_name }}
+  </li>
+</ul>
+<h4 *ngIf="flag">Hello KBTU!</h4>
+<button (click)="btnClicked()">Click here</button>
+<input type="text" [(ngModel)]="display" />
+<button (click)="addTodo()">Add Todo</button>
+<ul>
+  <li *ngFor="let todo of todoList; let i = index">
+    <p>{{ i + 1 }}) {{ todo }}</p>
+    <button (click)="removeTodo(i)">remove</button>
+  </li>
+</ul>
+<router-outlet></router-outlet>

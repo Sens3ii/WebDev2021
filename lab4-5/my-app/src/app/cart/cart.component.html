@@ -1,0 +1,43 @@
+<h3 class="category-name">Cart</h3>
+
+<p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p>
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }} </span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name"> Name </label>
+    <input id="name" type="text" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="address"> Address </label>
+    <input id="address" type="text" formControlName="address" />
+  </div>
+
+  <button class="button" type="submit">Purchase</button>
+</form>
+
+
+
+15 задач
+1. Узнать сколько элементов в массиве больше чем данное нам число.
+2. Узнать за сколько дней человек прочитает n листов, если скорость в день k страниц
+3. Умножить каждый элемент массива на k
+4. Проверить является ли наши элементы массива читаемыми (по аски коду проверить входит ли число в рэнж)
+5. ax − b = cx + d , a b c d дадут, найти x 
+6. Сумма первой цифры и последней цифры от числа. 1234 -> 5
+7. Compression. Удалить повторяющиеся элементы после нашего. ABCABCDABCDEABCDEF -> ABCDEF. KHABIB - KHABI 
+8. Все числа на главной диагонали и выше нашей матрицы, заменить на 1.
+9. Посчитать сколько рядов заполены только единицами в матрице.
+10. пиздец кымбат придумала дичь
+11. Дано трехзначное число, если первое делится на что-то, второе делится на что-то и тд, то это хорошее число, иначе плохое.
+12. Дано n строк. Найти общие символы в каждой (set intersection)
+13. Уникальность массива
+14. Палиндром 
+15. рекурсия 
